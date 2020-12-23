@@ -1,0 +1,172 @@
+
+//   for exporting to other....
+
+
+//  ...
+import  varf , {no, sun,All, suns} from "./App" ;
+<>
+  <h1>good</h1>
+    <h1>{no} {sun}</h1> 
+    <h2>{suns()}</h2>
+      <p>varf </p>  
+          <All/>    </> 
+          //.........
+
+
+import React from 'react';
+ 
+let varf= 98;
+
+export default varf;
+
+let no="VIKAS";
+
+let sun= 'Kumar';
+
+function suns(){
+    let name='gupta';
+    document.write('called method');  
+  return name;
+}
+
+export {no, suns ,sun};
+
+
+
+  function All(){
+       return (
+                <>
+                <h1> Using component now</h1>
+                </>
+       )
+  }
+
+  export {All};
+
+
+
+
+
+################________________________ WEb series project  _______________###############
+
+
+   *****   in {  index.js file   }
+
+
+
+   import React from 'react';
+import ReactDom from 'react-dom';
+import Card, {Sdata} from "./App.jsx";
+//import Sdata from './Map.jsx';
+
+
+let out= (value,index)=> {
+  console.log(index);
+  return (
+    <Card
+    imgsrc= {value.imgsrc} 
+    link= {value.link} 
+    sname= {value.sname} 
+    title= {value.title}   />
+  );
+};
+
+ 
+ 
+
+ReactDom.render(
+      <>
+      <h1> List of top <em>Netflix web series </em> on this responive web page</h1>
+        {Sdata.map(out)}
+
+      </>, document.getElementById('root')
+
+);
+
+
+
+
+
+
+**********************   for {  App.jsx file }  ******************
+
+
+
+import React from "react";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+//    ----------   use key for tools..
+
+
+
+
+function Card(props){
+
+  return (
+      <>
+      <div className='container-fluid' >
+       <div className='card'  style={{ width: '300px' , margin :'50px' , float:'left'}} > 
+
+          <img src={props.imgsrc}  alt='mypic' className='card-img-top' style = {{height:'200px'}} />
+           <div className=' card-body'>
+          
+           <h1 className='card-title'>{props.title}</h1>
+           <h3 className='card-text'  style={{color:'red'}} >{props.sname}</h3>
+           <a href={props.link}  target="_blank" >
+             <button className='btn btn-success'> Watch now </button>
+           </a>
+         
+        </div>
+        </div>
+        </div>
+      </>
+
+  );
+}
+
+export default Card;
+
+const Sdata= [
+  {
+    imgsrc:" https://wallpapercave.com/wp/wp1839579.jpg" ,
+    link:'https://www.netflix.com/in/title/80057281'    ,
+    sname:"Stranger things" ,
+    title:'Netflix web series' 
+  },
+
+  {
+    imgsrc :" https://wallpapercave.com/wp/wp4056410.jpg" ,
+    link:'https://www.netflix.com/in/title/80100172'    ,
+    sname:"Dark" ,
+    title:'Netflix web series' 
+
+      
+  },
+
+  {
+      imgsrc:"https://wallpapercave.com/wp/wp5410711.jpg" ,
+      link:'https://www.netflix.com/in/title/80189685'    ,
+      sname:"The Witcher" ,
+      title:'Netflix web series' 
+  } ,
+
+  {
+      imgsrc:"https://wallpapercave.com/wp/wp5410711.jpg" ,
+      link:'https://www.netflix.com/in/title/80192098'    ,
+      sname:"The Witcher" ,
+      title:'Netflix web series' 
+  }
+
+]
+
+
+export {Sdata} ;
+
+
+***********************
+
+
+
+ 
+
+
